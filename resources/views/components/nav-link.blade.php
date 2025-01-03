@@ -5,7 +5,8 @@
 @php
 $style_current = "bg-gray-900 text-white";
 $style_default = "text-gray-300 hover:bg-gray-700 hover:text-white";
-$is_current_page = request()->is($href);
+$is_current_page = request()->is($href, ltrim($href,'/'));
+
 @endphp
 
 <li class="list-none">

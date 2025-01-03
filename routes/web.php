@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\Contact;
 use App\Models\Job;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+
 	return view('app.home', [
 		'greeting' => 'Hello'
 	]);
@@ -15,7 +17,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/contact', function () {
-	return view('app.contact');
+	return view('app.contact', ['contacts' => Contact::all()]);
 });
 
 Route::get('/jobs', function () {

@@ -1,11 +1,18 @@
+@props([
+        'title' => 'Homepage',
+        'description' => config('meta.description'),
+        'layout' => 'full'
+    ])
+@php
+    $max_width = match($layout) {
+		'blog'  => 'max-w-3xl',
+        default => 'max-w-7xl',
+    };
+@endphp
+
 <!doctype html>
 <html lang="en">
 <head>
-    @props([
-        'title' => 'Homepage',
-        'description' => config('meta.description'),
-    ])
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{$title . config('meta.title_suffix') }}</title>
@@ -49,6 +56,7 @@
                             <x-nav-link href="/about">About</x-nav-link>
                             <x-nav-link href="/contacts">Contacts</x-nav-link>
                             <x-nav-link href="/jobs">Jobs</x-nav-link>
+                            <x-nav-link href="/blog">Blog</x-nav-link>
                         </ul>
                     </div>
                 </div>
@@ -61,10 +69,11 @@
                 <x-nav-link href="/">Home</x-nav-link>
                 <x-nav-link href="/about">About</x-nav-link>
                 <x-nav-link href="/contacts">Contacts</x-nav-link>
+                <x-nav-link href="/blog">Blog</x-nav-link>
             </ul>
         </div>
     </nav>
-    <main class="max-w-7xl mx-auto px-6 py-8">
+    <main class="{{$max_width}} mx-auto px-6 py-8">
     
     {{$slot}} {{-- Content goes here --}}
     

@@ -6,18 +6,13 @@
                 <ul class="mb-4 p-4 border border-gray-300 rounded">
                     <li>
                         <h3>{{$contact['name']}}</h3>
-                        @if(isset($contact['job_title']))
-                            <p>{{$contact['job_title']}}</p>
-                        @endif
-                        @if(isset($contact['email']))
-                            <p><a href="mailto:{{$contact['email']}}">{{$contact['email']}}</a></p>
-                        @endif
+                        <p>{{$contact['job_title']}}</p>
+                        <p><a href="mailto:{{$contact['email']}}">{{$contact['email']}}</a></p>
                         @if(isset($contact['phone']))
-                            <p><a href="mailto:{{$contact['phone']}}">{{$contact['phone']}}</a></p>
+                            <p><a href="tel:{{$contact['phone']}}">{{$contact['phone']}}</a></p>
                         @endif
                     </li>
                 </ul>
-{{--            </a>--}}
         @endforeach
     @else
         <p>No contacts found.</p>

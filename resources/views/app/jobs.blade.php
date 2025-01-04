@@ -9,6 +9,11 @@
                     <li>
                         <h3>{{$job['title']}}</h3>
                         <p>{{$job['salary']}} Kč per month</p>
+{{--                        @dd($job);--}}
+                        <div class="mt-2 flex flex-wrap gap-2 items-center">
+                            <small class="py-1 px-2 rounded bg-blue-700 inline-block text-white">{{$job->employer->company}}</small>
+                            <small><strong>Employer:</strong> {{$job->employer->name}}</small>
+                        </div>
                     </li>
                 </ul>
             </a>

@@ -47,7 +47,7 @@
                         <ul class="flex space-x-4">
                             <x-nav-link href="/">Home</x-nav-link>
                             <x-nav-link href="/about">About</x-nav-link>
-                            <x-nav-link href="/contact">Contact</x-nav-link>
+                            <x-nav-link href="/contacts">Contacts</x-nav-link>
                             <x-nav-link href="/jobs">Jobs</x-nav-link>
                         </ul>
                     </div>
@@ -60,7 +60,7 @@
             <ul class="space-y-1 px-2 pb-3 pt-2">
                 <x-nav-link href="/">Home</x-nav-link>
                 <x-nav-link href="/about">About</x-nav-link>
-                <x-nav-link href="/contact">Contact</x-nav-link>
+                <x-nav-link href="/contacts">Contacts</x-nav-link>
             </ul>
         </div>
     </nav>

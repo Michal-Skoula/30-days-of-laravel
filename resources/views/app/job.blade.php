@@ -4,7 +4,7 @@
     description="Job description for {{$job['title']}} role."
 >
     <div class="flex w-full justify-between items-center mb-4">
-        <h1 class="mb-0">Job listing: {{$job['title']}}</h1>
+        <h1 class="mb-0">Job listing</h1>
         <p><a href="/jobs">Back to jobs</a></p>
     </div>
     <p>This is the listing for the <strong>{{$job['title']}}</strong> job. The salary is <strong>{{$job['salary']}} Kč</strong> per month.</p>
@@ -20,5 +20,5 @@
     </div>
     <p>There is currently no listing with the specified ID. Try again later.</p>
 </x-layout>
-@endif;
+@endif
 

@@ -16,7 +16,7 @@ Route::get('/about', function () {
 	return view('app.about');
 });
 
-Route::get('/contact', function () {
+Route::get('/contacts', function () {
 	return view('app.contact', ['contacts' => Contact::all()]);
 });
 

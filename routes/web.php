@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Job;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,21 +14,24 @@ Route::get('/', function () {
 Route::get('/about', function () {
 	return view('app.about');
 });
-Route::get('/contacts', function () {
-	$contacts = Contact::simplePaginate(3);
 
-	return view('app.contact', ['contacts' => $contacts]);
-});
+// Contacts
+Route::get('/contacts', [ContactController::class, 'index']);
+Route::get('/contacts/add', [ContactController::class, 'add']);
+
+Route::post('/contacts/create', [ContactController::class, 'create']);
 
 
 // Jobs
 Route::get('/jobs', function () {
-	$jobs = Job::with('employer')->get();
+	$jobs = Job::with('employer')
+		->orderBy('created_at', 'desc')
+		->get();
 
-	return view('app.jobs.all_jobs', ['jobs' => $jobs]);
+	return view('app.jobs.index', ['jobs' => $jobs]);
 });
 Route::get('/jobs/{id}', function ($id) {
-	return view('app.jobs.single_job', ['job' => Job::find($id)]);
+	return view('app.jobs.single', ['job' => Job::find($id)]);
 });
 
 

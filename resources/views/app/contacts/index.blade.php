@@ -1,5 +1,8 @@
 <x-layout title="Contacts" description="All contacts">
-    <h1>Contacts</h1>
+    <div class="flex flex-wrap justify-between items-center mb-3">
+        <h1 class="mb-0">Contacts</h1>
+        <x-button href="/contacts/add">Add new contact</x-button>
+    </div>
 {{--    @dd($contacts)--}}
     @if(!$contacts->isEmpty())
         <ul>

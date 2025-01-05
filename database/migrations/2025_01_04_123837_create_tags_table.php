@@ -15,7 +15,6 @@ return new class extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
 			// In an ideal world this is a many-to-many relationship but this works as well mostly besides messed up IDs
-			$table->foreignIdFor(Blog::class);
 			$table->string('tag');
 			$table->string('color');
             $table->timestamps();

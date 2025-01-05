@@ -2,9 +2,9 @@
     <h1>Contacts</h1>
     
     @if(!$contacts->isEmpty())
-        <ul class="mb-4 p-4 border border-gray-300 rounded">
+        <ul >
         @foreach($contacts as $contact)
-            <li>
+            <li class="mb-4 p-4 border border-gray-300 rounded">
                 <h3>{{$contact['name']}}</h3>
                 <p>{{$contact['job_title']}}</p>
                 <p><a href="mailto:{{$contact['email']}}">{{$contact['email']}}</a></p>

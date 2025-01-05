@@ -3,9 +3,9 @@
     <h2>Available jobs</h2>
     
     @if(!$jobs->isEmpty())
-        <ul class="mb-4 p-4 border border-gray-300 hover:border-blue-600 rounded transition-colors duration-300">
+        <ul>
         @foreach($jobs as $job)
-            <li>
+            <li class="mb-4 p-4 border border-gray-300 hover:border-blue-600 rounded transition-colors duration-300">
                 <a href="/jobs/{{$job['id']}}">
                     <h3>{{$job['title']}}</h3>
                     <p>{{$job['salary']}} Kč per month</p>

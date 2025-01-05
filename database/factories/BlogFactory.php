@@ -29,6 +29,4 @@ class BlogFactory extends Factory
 
 // ---- Populate the model ----
 //
-// App\Models\Blog::factory(10)
-//	->has(App\Models\Tag::factory()->count(5))
-//	->create()
+// App\Models\Blog::factory(10)->has(App\Models\Tag::factory()->count(5))->create()

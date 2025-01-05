@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
     use HasFactory;
 
-	public function blog() : belongsTo {
-		return $this->belongsTo(Blog::class);
+	public function blog() : belongsToMany {
+		return $this->belongsToMany(Blog::class);
 	}
 
 }
